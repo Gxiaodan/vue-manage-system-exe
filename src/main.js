@@ -14,8 +14,11 @@ import Viewer from 'v-viewer'
 import ViewUI from "view-design";
 import "view-design/dist/styles/iview.css"
 // import "../my-theme/index.less"
+import sitplayer from 'sitplayer'
+import 'sitplayer/dist/sit-player.css'
 
 Vue.use(Viewer)
+Vue.use(sitplayer)
 // Vue.use(ViewUI);
 // iview样式全局配置
 Vue.use(ViewUI, {
