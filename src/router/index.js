@@ -145,6 +145,11 @@ export default new Router({
                     path: '/exe04',
                     component: resolve => require(['../components/page/Dxd-exe/components/child04-vViewer.vue'], resolve),
                     meta: { title: 'v-viewer练习页面' }
+                },
+                {
+                    path: '/video-exe',
+                    component: resolve => require(['../components/page/Dxd-exe/components/video-exe.vue'], resolve),
+                    meta: { title: 'video练习页面' }
                 }
             ]
         },

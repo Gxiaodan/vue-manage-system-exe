@@ -138,6 +138,10 @@
                             {
                                 index: 'exe04',
                                 title: 'v-viewer练习页面'
+                            },
+                            {
+                                index: 'video-exe',
+                                title: 'video练习页面'
                             }
                         ]
                     },
