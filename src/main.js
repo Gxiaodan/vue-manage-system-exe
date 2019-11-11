@@ -16,8 +16,11 @@ import "view-design/dist/styles/iview.css"
 // import "../my-theme/index.less"
 import sitplayer from 'sitplayer'
 import 'sitplayer/dist/sit-player.css'
+import contextmenu from 'v-contextmenu'
+import 'v-contextmenu/dist/index.css'
 
 Vue.use(Viewer)
+Vue.use(contextmenu)
 Vue.use(sitplayer)
 // Vue.use(ViewUI);
 // iview样式全局配置

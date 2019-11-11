@@ -1,7 +1,7 @@
 <template>
   <div>
     视频播放
-    <div class="alarm_content_video" :style="videoStyle" v-on:click.stop="defaultStop" v-on:dblclick.stop="defaultStop">
+    <div class="alarm_content_video"  v-on:click.stop="defaultStop" v-on:dblclick.stop="defaultStop">
       <sit-player ref="sitPlayerNode" :BakServerIP="videoControlIp" :MainServerIP="MainServerIP" :isLogin="false"></sit-player>
     </div>
 
@@ -9,17 +9,23 @@
 </template>
 
 <script>
+// import ipConfig from '@/config/index'
 
 export default {
 name: "video-exe",
   data () {
     return {
-      videoControlIp: "",
-      MainServerIP: "", //视频rest服务
+      videoControlIp: '172.20.32.141', //视频调度服务地址
+      MainServerIP: "172.20.32.141", //视频rest服务
 
     }
   },
 
+  created() {
+    // const {videoBtnArr} = ipConfig;
+    // console.log(videoBtnArr,"videoBtnArr")
+
+  },
   mounted() {
     //视频菜单栏配置项
     let CustomizeConfig = {
@@ -40,7 +46,8 @@ name: "video-exe",
           return
         }
         this.$refs.sitPlayerNode.MS_CustomizeConfig(JSON.stringify(CustomizeConfig))
-        document.querySelectorAll('.wsVideo-player')[0].style.pointEvent = 'auto'
+        //document.querySelectorAll('.wsVideo-player')[0].style.pointEvent = 'auto'
+        this.$refs.sitPlayerNode.MS_SetCameraToCurrentWindowAsyn('71000000001320000016', 0)
       }, 500)
     })
   },
@@ -48,7 +55,9 @@ name: "video-exe",
   },
 
   methods: {
-  
+   defaultStop() {
+      return false
+    },
   }
 }
 </script>
