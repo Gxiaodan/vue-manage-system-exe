@@ -25,6 +25,21 @@
         <i-switch size="large" true-color="#0f0" false-color="ff0"/>
          <i-switch true-color="#13ce66" false-color="#ff4949" />
          <Table @on-current-change="choose" highlight-row :row-class-name="rowClassName" :columns="columns1" :data="data1"></Table>
+    
+        <Table border :columns="columns2" :data="data2">
+            <template slot-scope="{row}" slot="name">
+                <strong>{{row.name}}</strong>
+            </template>
+            <template slot-scope="{row, index}" slot="action">
+                <Button type="primary" size="small" style="margin-right: 5px" @click="show(index)" >View</Button>
+                <Button type="error" size="small" @click="remove(index)">Delete</Button>
+            </template>
+
+        </Table>
+        <Table border :columns="column3" :data="data3">
+
+        </Table>
+    
     </div>
 </template>
 <script>
@@ -78,6 +93,129 @@
                         address: 'Ottawa No. 2 Lake Park',
                         date: '2016-10-04'
                     }
+                ],
+                columns2: [
+                    {
+                        title: "Name",
+                        slot: "name"
+                    },
+                    {
+                        title:"Age",
+                        key: "age"
+                    },
+                    {
+                        title:"Address",
+                        key: "address"
+                    },
+                    {
+                        title: "Action",
+                        slot: "action",
+                        width: 150,
+                        align: "center"
+                    }
+                ],
+                data2: [
+                     {
+                        name: 'John Brown',
+                        age: 18,
+                        address: 'New York No. 1 Lake Park'
+                    },
+                    {
+                        name: 'Jim Green',
+                        age: 24,
+                        address: 'London No. 1 Lake Park'
+                    },
+                    {
+                        name: 'Joe Black',
+                        age: 30,
+                        address: 'Sydney No. 1 Lake Park'
+                    },
+                    {
+                        name: 'Jon Snow',
+                        age: 26,
+                        address: 'Ottawa No. 2 Lake Park'
+                    }
+                ],
+                column3: [
+                    {
+                        title: "Name",
+                        key: "name",
+                        render: (h, params) => {
+                            return h("div", [
+                                h("Icon", {
+                                    props: {
+                                        type:"person"
+                                    }
+                                }),
+                                h("strong",params.row.name)
+                            ])
+                        }
+                    },
+                    {
+                        title: "Age",
+                        key: "age"
+                    },
+                    {
+                        title: "Address",
+                        key: "address"
+                    },
+                    {
+                        title: "Action",
+                        key: "action",
+                        width: 150,
+                        algin: "center",
+                        render: (h,params) => {
+                            return h("div", [
+                                h("Button", {
+                                    props: {
+                                        type: "primary",
+                                        size: "small"
+                                    },
+                                    style: {
+                                        marginRight: "5px"
+                                    },
+                                    on: {
+                                        click: ()=>{
+                                            this.show(params.index)
+                                        }
+                                    }
+                                }, "View"),
+                                h("Button", {
+                                    props: {
+                                        type: "error",
+                                        size: "small"
+                                    },
+                                    on: {
+                                       click: () => {
+                                           this.remove(params.index)
+                                       } 
+                                    }
+                                }, "Delete")
+                            ]);
+                        }
+                    }
+                ],
+                data3:  [
+                    {
+                        name: 'John Brown',
+                        age: 18,
+                        address: 'New York No. 1 Lake Park'
+                    },
+                    {
+                        name: 'Jim Green',
+                        age: 24,
+                        address: 'London No. 1 Lake Park'
+                    },
+                    {
+                        name: 'Joe Black',
+                        age: 30,
+                        address: 'Sydney No. 1 Lake Park'
+                    },
+                    {
+                        name: 'Jon Snow',
+                        age: 26,
+                        address: 'Ottawa No. 2 Lake Park'
+                    }
                 ]
             }
         },
@@ -120,6 +258,15 @@
                         }
                     })
                 })
+            },
+            show(index) {
+                this.$Modal.info({
+                    title:"User Info",
+                    content: `Name: ${this.data2[index].name}<br>Age: ${this.data2[index].age}<br>Address:${this.data2[index].address}`
+                })
+            },
+            remove(index) {
+                this.data2.splice(index, 1);
             }
         },
         model: {
