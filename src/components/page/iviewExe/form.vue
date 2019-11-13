@@ -39,7 +39,39 @@
         <Table border :columns="column3" :data="data3">
 
         </Table>
-    
+
+        <Select clearable v-model="model1" size="small" style="width: 200px">
+            <Option v-for="item in cityList" :value="item.value" :key="item.value">
+                {{item.label}}
+            </Option>
+            <Option disabled>disabled</Option>
+        </Select>
+
+        <Select v-model="model9" style="width:200px" prefix="ios-home" multiple>
+            <Option value="New York" label="New York">
+                <span>New York</span>
+                <span style="float:right; color:#ccc">America</span>
+            </Option>
+            <Option value="London" label="London">
+                <span>Londonrrr</span>
+                <span style="float:right;color:#ccc">U.K.</span>
+            </Option>
+            <Option value="Sydney" label="Sydney">
+                <span>Sydneyww</span>
+                <span style="float:right;color:#ccc">Australian</span>
+            </Option>
+        </Select>
+        <AutoComplete v-model="value_a" :data="data_a" @on-search="handleSearch1">
+
+        </AutoComplete>
+
+        <Slider v-model="value_s" range>
+
+        </Slider>
+        <Rate v-model="value_r" show-text character="B"></Rate>
+        <Rate show-text allow-half v-model="valueCustomText" icon="ios-heart">
+            <span style="color: #f5a623">{{valueCustomText}}</span>
+        </Rate>
     </div>
 </template>
 <script>
@@ -47,6 +79,39 @@
         name: "iview_form",
         data() {
             return {
+                value_r: 0,
+                valueCustomText: 3.8,
+                value_s: [22,45],
+                value_a: "",
+                data_a: [],
+                model9: "",
+                cityList: [
+                    {
+                        value: 'New York',
+                        label: 'New York'
+                    },
+                    {
+                        value: 'London',
+                        label: 'London'
+                    },
+                    {
+                        value: 'Sydney',
+                        label: 'Sydney'
+                    },
+                    {
+                        value: 'Ottawa',
+                        label: 'Ottawa'
+                    },
+                    {
+                        value: 'Paris',
+                        label: 'Paris'
+                    },
+                    {
+                        value: 'Canberra',
+                        label: 'Canberra'
+                    }
+                ],
+                model1: '',
                 buttonSize:"large",
                 loading: false,
                 value1: "",
@@ -190,6 +255,15 @@
                                            this.remove(params.index)
                                        } 
                                     }
+                                }, "Delete"),
+                                h("i-switch", {
+                                    props: {
+                                        type: "error",
+                                        size: "small"
+                                    },
+                                    on: {
+                                       
+                                    }
                                 }, "Delete")
                             ]);
                         }
@@ -230,6 +304,13 @@
             }
         },
         methods: {
+            handleSearch1(value) {
+                this.data_a = !value ? [] : [
+                    value,
+                    value + value,
+                    value + value + value
+                ]
+            },
             choose(row,old){
                 console.log(row)
                 console.log(old)
