@@ -142,6 +142,10 @@
                             {
                                 index: 'video-exe',
                                 title: 'video练习页面'
+                            },
+                            {
+                                index: 'print',
+                                title: 'print练习页面'
                             }
                         ]
                     },

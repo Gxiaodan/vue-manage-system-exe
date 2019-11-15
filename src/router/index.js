@@ -150,6 +150,11 @@ export default new Router({
                     path: '/video-exe',
                     component: resolve => require(['../components/page/Dxd-exe/components/video-exe.vue'], resolve),
                     meta: { title: 'video练习页面' }
+                },
+                {
+                    path: '/print',
+                    component: resolve => require(['../components/page/Dxd-exe/components/print.vue'], resolve),
+                    meta: { title: 'print打印预览练习页面' }
                 }
             ]
         },
