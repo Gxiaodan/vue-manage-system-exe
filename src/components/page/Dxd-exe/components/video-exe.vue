@@ -5,7 +5,19 @@
       <sit-player ref="sitPlayerNode" :BakServerIP="videoControlIp" :MainServerIP="MainServerIP" :isLogin="false"></sit-player>
     </div>
 
-    <h1 style="font-size: 16px; text-align: center;">{{ $t("message.hello") }}</h1>
+    <!-- <h1 style="font-size: 16px; text-align: center;">{{ $t("message.hello") }}</h1> -->
+
+<!-- <div id="app"> -->
+    <div style="margin: 20px;">
+      <h1>{{$t("message.title")}}</h1>
+      <input style="width: 300px;" class="form-control" :placeholder="$t('placeholder.enter')">
+      <ul>
+        <li v-for="(brand, index) in brands" :key="index">{{brand}}</li>
+      </ul>
+    </div>
+    <button type="button" class="btn btn-success" @click="changeLocale">中文/EN</button>   
+<!-- </div> -->
+
 
   </div>
 </template>
@@ -19,7 +31,7 @@ name: "video-exe",
     return {
       videoControlIp: '172.20.32.141', //视频调度服务地址
       MainServerIP: "172.20.32.141", //视频rest服务
-
+      brands: [this.$t('brands.nike'), this.$t('brands.adi'), this.$t('brands.nb'), this.$t('brands.ln')]
     }
   },
 
@@ -59,6 +71,21 @@ name: "video-exe",
   methods: {
    defaultStop() {
       return false
+    },
+    // js方法
+    changeLocale () {
+        this.$confirm(this.$t('layer.toggle'), this.$t('layer.tips'), {
+            confirmButtonText: this.$t('button.ok'),
+            cancelButtonText: this.$t('button.cancel'),
+            type: 'warning'
+            }).then(() => {
+              let locale = this.$i18n.locale
+              locale === 'zh' ? this.$i18n.locale = 'en' : this.$i18n.locale = 'zh'
+            }).catch(() => {
+                  this.$message({
+                      type: 'info',
+                      })      
+            })
     },
   }
 }
