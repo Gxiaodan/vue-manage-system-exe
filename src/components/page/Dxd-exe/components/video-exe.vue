@@ -5,6 +5,8 @@
       <sit-player ref="sitPlayerNode" :BakServerIP="videoControlIp" :MainServerIP="MainServerIP" :isLogin="false"></sit-player>
     </div>
 
+    <h1 style="font-size: 16px; text-align: center;">{{ $t("message.hello") }}</h1>
+
   </div>
 </template>
 
