@@ -146,6 +146,10 @@
                             {
                                 index: 'print',
                                 title: 'print练习页面'
+                            },
+                            {
+                                index: 'vueDrag',
+                                title: 'drag练习页面'
                             }
                         ]
                     },

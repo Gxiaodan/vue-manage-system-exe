@@ -155,6 +155,11 @@ export default new Router({
                     path: '/print',
                     component: resolve => require(['../components/page/Dxd-exe/components/print.vue'], resolve),
                     meta: { title: 'print打印预览练习页面' }
+                },
+                {
+                    path: '/vueDrag',
+                    component: resolve => require(['../components/page/Dxd-exe/components/vue-drag.vue'], resolve),
+                    meta: { title: 'vue-drag-resize练习页面' }
                 }
             ]
         },
