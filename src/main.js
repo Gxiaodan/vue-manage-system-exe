@@ -18,14 +18,15 @@ import sitplayer from 'sitplayer'
 import 'sitplayer/dist/sit-player.css'
 import contextmenu from 'v-contextmenu'
 import 'v-contextmenu/dist/index.css'
-import VueI18n from 'vue-i18n'
+// import VueI18n from 'vue-i18n'
+import i18n from './i18n/i18n'
 
-Vue.use(VueI18n);
+// Vue.use(VueI18n);
 Vue.use(Viewer)
 Vue.use(contextmenu)
 Vue.use(sitplayer)
-// Vue.use(ViewUI);
-// iview样式全局配置
+    // Vue.use(ViewUI);
+    // iview样式全局配置
 Vue.use(ViewUI, {
     transfer: true,
     size: 'large',
@@ -82,13 +83,21 @@ router.beforeEach((to, from, next) => {
 //     messages
 // })
 
-const i18n = new VueI18n({
-    locale: 'zh',  // 语言标识
-    messages: {
-        'zh': require('./lang/zh'),
-        'en': require('./lang/en')
-    }
-})
+// const i18n = new VueI18n({
+//     locale: 'en', // 语言标识
+//     messages: {
+//         'zh': require('./lang/zh'),
+//         'en': require('./lang/en')
+//     }
+// })
+
+// const i18n = new VueI18n({
+//     locale: localStorage.getItem('locale') || 'zh',
+//     messages: {
+//         'zh': require('./i18n/langs/zh'),
+//         'en': require('./i18n/langs/en')
+//     }
+// })
 
 new Vue({
     router,
