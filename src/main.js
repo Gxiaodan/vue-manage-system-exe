@@ -20,6 +20,7 @@ import contextmenu from 'v-contextmenu'
 import 'v-contextmenu/dist/index.css'
 // import VueI18n from 'vue-i18n'
 import i18n from './i18n/i18n'
+import VueDragResize from 'vue-drag-resize'
 
 // Vue.use(VueI18n);
 Vue.use(Viewer)
@@ -39,6 +40,7 @@ Vue.use(ViewUI, {
 Vue.component(DatePicker.name, DatePicker)
 Vue.component(Select.name, Select)
 Vue.component(Icon.name, Icon)
+Vue.component('vue-drag-resize', VueDragResize)
 Vue.config.productionTip = false
 Vue.use(ElementUI, {
     size: 'small'
