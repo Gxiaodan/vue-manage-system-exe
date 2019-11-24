@@ -10,15 +10,14 @@ export default new Router({
         },
         {
             path: '/iview',
-            component:resolve => require(['../components/common/Home.vue'], resolve),
+            component: resolve => require(['../components/common/Home.vue'], resolve),
             redirect: 'noredirect',
             name: 'iview',
             meta: {
                 title: 'iview',
                 icon: 'international'
             },
-            children: [
-                {
+            children: [{
                     path: '/iview01',
                     component: resolve => require(['../components/page/iviewExe/child01.vue'], resolve),
                     meta: { title: 'iview练习页面' }
@@ -160,7 +159,12 @@ export default new Router({
                     path: '/vueDrag',
                     component: resolve => require(['../components/page/Dxd-exe/components/vue-drag.vue'], resolve),
                     meta: { title: 'vue-drag-resize练习页面' }
-                }
+                },
+                {
+                    path: '/bicycleSlider',
+                    component: resolve => require(['../components/page/Dxd-exe/bicycleSlider.vue'], resolve),
+                    meta: { title: 'bicycleSlider练习页面' }
+                },
             ]
         },
         {

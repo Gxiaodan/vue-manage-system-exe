@@ -150,7 +150,12 @@
                             {
                                 index: 'vueDrag',
                                 title: 'drag练习页面'
+                            },
+                            {
+                                index: 'bicycleSlider',
+                                title: 'bicycleSlider练习页面'
                             }
+
                         ]
                     },
                     {
