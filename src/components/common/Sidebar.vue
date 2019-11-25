@@ -153,8 +153,12 @@
                             },
                             {
                                 index: 'ele_slider',
-                                title: 'ele_slider练习页面'
+                                title: 'ele_slider练习页面'},
+                            {
+                                index: 'bicycleSlider',
+                                title: 'bicycleSlider练习页面'
                             }
+
                         ]
                     },
                     {

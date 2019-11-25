@@ -7,7 +7,6 @@
 
     <!-- <h1 style="font-size: 16px; text-align: center;">{{ $t("message.hello") }}</h1> -->
 
-<!-- <div id="app"> -->
     <div style="margin: 20px;">
       <h1>{{$t("message.title")}}</h1>
       <input style="width: 300px;" class="form-control" :placeholder="$t('placeholder.enter')">
@@ -16,7 +15,27 @@
       </ul>
     </div>
     <button type="button" class="btn btn-success" @click="changeLocale">中文/EN</button>   
-<!-- </div> -->
+    <el-button type="button" class="btn btn-success" @click="toggleLang('zh')">中文</el-button>   
+    <el-button type="button" class="btn btn-success" @click="toggleLang('en')">English</el-button>   
+
+    <!-- <div class="lang"> -->
+        <el-dropdown>
+          <i class="iconfont icon-language4"></i>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item @click.native="toggleLang('zh')" :disabled="$i18n.locale == 'zh'">中文</el-dropdown-item>
+            <el-dropdown-item @click.native="toggleLang('en')" :disabled="$i18n.locale == 'en'">English</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      <!-- </div> -->
+
+    <div class="block">
+        <span class="demonstration">默认</span>
+        <el-date-picker
+        v-model="value1"
+        type="date"
+        placeholder="选择日期">
+        </el-date-picker>
+    </div>
 
 
   </div>
@@ -29,6 +48,7 @@ export default {
 name: "video-exe",
   data () {
     return {
+        value1: '',
       videoControlIp: '172.20.32.141', //视频调度服务地址
       MainServerIP: "172.20.32.141", //视频rest服务
       brands: [this.$t('brands.nike'), this.$t('brands.adi'), this.$t('brands.nb'), this.$t('brands.ln')]
@@ -71,6 +91,23 @@ name: "video-exe",
   methods: {
    defaultStop() {
       return false
+    },
+    toggleLang(lang) {
+      if(lang == 'zh'){
+        localStorage.setItem('locale', 'zh')
+        this.$i18n.locale = localStorage.getItem('locale')
+        this.$message({
+          message: '切换为中文！',
+          type: 'success'
+        })
+      } else if (lang == 'en') {
+        localStorage.setItem('locale', 'en')
+        this.$i18n.locale = localStorage.getItem('locale')
+        this.$message({
+          message: 'Switch to English!',
+          type: 'success'
+      })
+}
     },
     // js方法
     changeLocale () {
