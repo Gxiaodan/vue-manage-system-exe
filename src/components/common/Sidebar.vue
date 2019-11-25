@@ -150,6 +150,10 @@
                             {
                                 index: 'vueDrag',
                                 title: 'drag练习页面'
+                            },
+                            {
+                                index: 'ele_slider',
+                                title: 'ele_slider练习页面'
                             }
                         ]
                     },

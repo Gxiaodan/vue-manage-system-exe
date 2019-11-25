@@ -160,6 +160,11 @@ export default new Router({
                     path: '/vueDrag',
                     component: resolve => require(['../components/page/Dxd-exe/components/vue-drag.vue'], resolve),
                     meta: { title: 'vue-drag-resize练习页面' }
+                },
+                {
+                    path: '/ele_slider',
+                    component: resolve => require(['../components/page/Dxd-exe/components/ele_slider.vue'], resolve),
+                    meta: { title: 'vue-ele_slider练习页面' }
                 }
             ]
         },
