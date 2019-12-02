@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <VueDragResize :isActive="true" :minw="minw" :minh="minh" :w="200" :h="800" v-on:resizing="resize" v-on:dragging="resize">
+        <VueDragResize :isActive="true" :minw="minw" :minh="minh" :w="dragw" :h="dragh" v-on:resizing="resize" v-on:dragging="resize">
             <div class="box" :style="{width: boxW,height: boxH}">
                 1
             </div>
@@ -36,7 +36,9 @@
                 boxW: "200px",
                 boxH: "200px",
                 minw: 200,
-                minh: 400
+                minh: 400,
+                dragw: 200,
+                dragh: 800
             }
         },
 
@@ -46,7 +48,7 @@
                 this.height = newRect.height;
                 this.top = newRect.top;
                 this.left = newRect.left;
-                if(this.width > 400) {
+                if(this.width >= 400) {
                     this.minh = 400;
                     this.boxW = (this.width/2) + 'px';
                     if(this.height > 400) {
@@ -54,6 +56,7 @@
                     }
                 } else {
                     this.minh = 800;
+                    this.dragh = 800;
                     this.boxH = '200px';
                     if(this.height > 400) {
                     }
