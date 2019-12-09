@@ -170,6 +170,11 @@ export default new Router({
                     component: resolve => require(['../components/page/Dxd-exe/bicycleSlider.vue'], resolve),
                     meta: { title: 'bicycleSlider练习页面' }
                 },
+                {
+                    path: '/scrollAnimate',
+                    component: resolve => require(['../components/page/Dxd-exe/components/scrollAnimate.vue'], resolve),
+                    meta: { title: 'scrollAnimate练习页面' }
+                },
             ]
         },
         {
