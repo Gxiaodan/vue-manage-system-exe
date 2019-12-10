@@ -16,9 +16,11 @@ service.interceptors.request.use(
     config => {
         // Do something before request is sent
         // if (store.getters.token) {
+          if (1) {
         //   // 让每个请求携带token-- ['X-Token']为自定义key 请根据实际情况自行修改
-        //   config.headers['authorization'] = store.getters.token
-        // }
+          // config.headers['authorization'] = "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMzEyMyIsImhvc3QiOiIxNzIuMjAuMzYuMjEzIiwicmVtZW1iZXJNZSI6ZmFsc2UsImV4cCI6MTU3Nzk1NTk1OCwidXNlcklkIjoiMmM5NGEwYTk2YTQ0NGQ1MTAxNmE0ZDViZTBiMTAwNDMiLCJTRUNSRVQiOiI4MmQxNTYyNDJjMzI0MmNhODQ5NDMzNDkzNmE3YmMwZSIsInVzZXJuYW1lIjoiZ3hkMiJ9.97XGlAi-8sNrSSC4R41CDP2KjeVa6rnNv3atZnfz8mS8hnsKTLgWxRVjaJAlIvUTeyJ_fhKScU1g36Ke6nySkQ"
+          // config.headers['authorization'] = store.getters.token
+        }
         // qs.stringify(config.query);
         console.log(config, "!!!!!!")
         return config
