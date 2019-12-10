@@ -22,6 +22,7 @@ import axios from 'axios'
         model: {
         },
         created(){
+            console.log(window.externalConfig.testService, 'testService==========')
             // checkOldPwd({
             // originalPwd: "111111"
             // }).then((data) => {
@@ -77,17 +78,29 @@ import axios from 'axios'
             //     console.log(error, 'alarmConfirmStatis===bbbb====error==')
             // })
 
-            axios.get('bbbb/api/vgis/proHomePage/alarmLevelStatis').then(res=>{
-                console.log(res, 'alarmLevelStatis===bbbb======')
+            // axios.get('bbbb/api/vgis/proHomePage/alarmLevelStatis').then(res=>{
+            //     console.log(res, 'alarmLevelStatis===bbbb======')
+            // }).catch(error => {
+            //     console.log(error, 'alarmLevelStatis===bbbb====error==')
+            // })
+            // http://120.79.68.66:8070/api/ai/aiIndex/alarmList
+            // http://120.79.68.66:8070/api/ai/aiIndex/picList
+            axios.get('bbbb/api/ai/aiIndex/alarmList').then(res=>{
+                console.log(res, 'alarmList===bbbb======')
             }).catch(error => {
-                console.log(error, 'alarmLevelStatis===bbbb====error==')
+                console.log(error, 'alarmList===bbbb====error==')
+            })
+            axios.get('bbbb/api/ai/aiIndex/picList').then(res=>{
+                console.log(res, 'picList===bbbb======')
+            }).catch(error => {
+                console.log(error, 'picList===bbbb====error==')
             })
             
-            alarmLevelStatis({
-            }).then((data) => {
-            console.log(data, "alarmLevelStatis============封装=")
+            // alarmLevelStatis({
+            // }).then((data) => {
+            // console.log(data, "alarmLevelStatis============封装=")
                 
-            }).catch(error => {console.error('alarmLevelStatis=====封装', error)})
+            // }).catch(error => {console.error('alarmLevelStatis=====封装', error)})
 
             // axios.get('aaaa/devicePoint/startGame?second=' + new Date().getTime()).then(res=>{
             //     console.log(res, 'startGame=========')
