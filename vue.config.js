@@ -23,6 +23,13 @@ module.exports = {
                   '^/aaaa': ''
                 }
               },
+              '/cccc': {
+                target: 'http://172.20.32.41:2000/compare/',
+                changeOrigin: true,
+                pathRewrite: {
+                  '^/cccc': ''
+                }
+              },
               '/bbbb': {
                 target: 'http://120.79.68.66:8070',
                 changeOrigin: true,

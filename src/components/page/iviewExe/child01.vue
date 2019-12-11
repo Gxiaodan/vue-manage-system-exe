@@ -85,16 +85,42 @@ import axios from 'axios'
             // })
             // http://120.79.68.66:8070/api/ai/aiIndex/alarmList
             // http://120.79.68.66:8070/api/ai/aiIndex/picList
-            axios.get('bbbb/api/ai/aiIndex/alarmList').then(res=>{
-                console.log(res, 'alarmList===bbbb======')
+            // axios.get('bbbb/api/ai/aiIndex/alarmList').then(res=>{
+            //     console.log(res, 'alarmList===bbbb======')
+            // }).catch(error => {
+            //     console.log(error, 'alarmList===bbbb====error==')
+            // })
+            // axios.get('bbbb/api/ai/aiIndex/picList').then(res=>{
+            //     console.log(res, 'picList===bbbb======')
+            // }).catch(error => {
+            //     console.log(error, 'picList===bbbb====error==')
+            // })
+
+            axios.get('bbbb/api/vgis/proHomePage/proPointData',{params:{monDevCategory: "02"}}).then(res=>{
+                console.log(res, 'proPointData===bbbb======')
             }).catch(error => {
-                console.log(error, 'alarmList===bbbb====error==')
+                console.log(error, 'proPointData===bbbb====error==')
             })
-            axios.get('bbbb/api/ai/aiIndex/picList').then(res=>{
-                console.log(res, 'picList===bbbb======')
+            axios.defaults.headers.post["authorization"] = "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMzEyMyIsImhvc3QiOiIxNzIuMjAuMzYuMjEzIiwicmVtZW1iZXJNZSI6ZmFsc2UsImV4cCI6MTU3ODEyNDc3MSwidXNlcklkIjoiMmM5NGEwYTk2YTQ0NGQ1MTAxNmE0ZDViZTBiMTAwNDMiLCJTRUNSRVQiOiI2MjgxZTBiMzUwOTU0MWJmYmVjZDRiNGIxZGQ0YzgyZSIsInVzZXJuYW1lIjoiZ3hkMiJ9.H0yvAeQFAe4bv6EdY9b7eLK9uI3aps5wiz7RTtqlqU1GpL5FfoWUEDhEbBwPpfk7hufmYo3uZ0Wkn7RY2vWkBQ";
+            axios.post('cccc/notificationInfo/findHomeAlarm',{
+                isHandled: "0",
+                pageSize: 5,
+                pageNumber: 1,
+                detailOrList: 0 //  查询列表0，查询图片页 1.
+            }).then(res=>{
+                console.log(res, 'findHomeAlarm===cccc======')
             }).catch(error => {
-                console.log(error, 'picList===bbbb====error==')
+                console.log(error, 'findHomeAlarm===cccc====error==')
             })
+            // export function findHomeAlarm(data) {
+            // return request({
+            //     url: api.findHomeAlarm,
+            //     method: 'post',
+            //     data
+            // })
+            // }
+            // ${compareService}/notificationInfo/findHomeAlarm
+            // http://172.20.32.41:2000/compare
             
             // alarmLevelStatis({
             // }).then((data) => {
