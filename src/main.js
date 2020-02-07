@@ -21,9 +21,11 @@ import 'v-contextmenu/dist/index.css'
 // import VueI18n from 'vue-i18n'
 import i18n from './i18n/i18n'
 import VueDragResize from 'vue-drag-resize'
+import dataV from '@jiaminghi/data-view'
 
 // Vue.use(VueI18n);
 Vue.use(Viewer)
+Vue.use(dataV)
 Vue.use(contextmenu)
 Vue.use(sitplayer)
     // Vue.use(ViewUI);

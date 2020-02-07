@@ -50,6 +50,27 @@ export default new Router({
             ]
         },
         {
+            path: '/dataV',
+            component: resolve => require(['../components/common/Home.vue'], resolve),
+            redirect: 'noredirect',
+            name: 'dataV',
+            meta: {
+                title: 'dataV',
+                icon: 'international'
+            },
+            children: [{
+                    path: '/dataV01',
+                    component: resolve => require(['../components/page/dataV/child01.vue'], resolve),
+                    meta: { title: 'dataV练习页面' }
+                },
+                {
+                    path: '/dataV02',
+                    component: resolve => require(['../components/page/dataV/form.vue'], resolve),
+                    meta: { title: 'dataV练习页面' }
+                }
+            ]
+        },
+        {
             path: '/',
             component: resolve => require(['../components/common/Home.vue'], resolve),
             meta: { title: '自述文件' },

@@ -197,6 +197,21 @@
                             },
                             
                         ]
+                    },
+                    {
+                        icon: 'el-icon-lx-warn',
+                        index: '10',
+                        title: 'DataV',
+                        subs: [
+                            {
+                                index: 'dataV01',
+                                title: 'dataV01练习页面1'
+                            },
+                             {
+                                index: 'dataV02',
+                                title: 'DataVForm'
+                            }                            
+                        ]
                     }
                     
                 ]
