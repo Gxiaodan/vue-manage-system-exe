@@ -30,6 +30,15 @@
         components:{
             vHead, vSidebar, vTags
         },
+        mounted(){
+            this.$nextTick(()=>{
+                //全局监听post
+                window.addEventListener("message", function (ev) {
+                    console.log(ev,"!!!!!!");
+                    // alert(2)
+                }, false)
+            });
+        },
         created(){
             bus.$on('collapse', msg => {
                 this.collapse = msg;

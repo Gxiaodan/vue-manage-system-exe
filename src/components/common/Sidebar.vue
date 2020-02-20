@@ -132,6 +132,10 @@
                                 title: '练习页面1'
                             },
                             {
+                                index: 'DynamicComponents',
+                                title: '动态组件'
+                            },
+                            {
                                 index: 'exe02',
                                 title: '动画练习页面'
                             },

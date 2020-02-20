@@ -1,5 +1,6 @@
 <template>
     <div>
+        <iframe  src="http://192.168.1.6:8088/" width="100%" height="100%"></iframe>
             exe index
             <hr/>
             自定义组件的v-model
@@ -74,9 +75,15 @@ import helloWorld from "./components/child02"
         mounted() {
             this.initZoom();
             this.restaurants = this.loadAll();
+            // // this.$nextTick(()=>{
+            //     //全局监听post
+            //     window.addEventListener("message", function (ev) {
+            //         console.log(ev,"!!!!!!");
+            //         alert(2)
+            //     }, false)
+            // // });
         },
         methods: {
-            
     evnt(event) {
 
         var evn = event,

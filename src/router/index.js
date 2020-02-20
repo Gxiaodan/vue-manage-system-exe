@@ -156,6 +156,12 @@ export default new Router({
                     component: resolve => require(['../components/page/Dxd-exe/index.vue'], resolve),
                     meta: { title: '练习页面' }
                 },
+
+                {
+                    path: '/DynamicComponents',
+                    component: resolve => require(['../components/page/Dxd-exe/components/dynamicComponents.vue'], resolve),
+                    meta: { title: '动态组件' }
+                },
                 {
                     path: '/exe02',
                     component: resolve => require(['../components/page/Dxd-exe/components/child03——animation.vue'], resolve),

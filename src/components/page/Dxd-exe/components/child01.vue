@@ -23,6 +23,83 @@
             :value="item.value">
             </el-option>
         </el-select>
+
+        <el-table
+      :data="tableData"
+      style="width: 100%;margin-bottom: 20px;"
+      row-key="id"
+      :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
+    >
+      <el-table-column
+        v-for="(item,index) in tableList"
+        :key="index"
+        :label="item.label"
+        :prop="item.prop"
+      ></el-table-column>
+      <el-table-column label="操作" width="200">
+        <template slot-scope="scope">
+          <el-button
+            @click="handleClick(scope.row)"
+            type="primary"
+            size="mini"
+            v-if="!scope.row.date"
+          >编辑</el-button>
+          <el-button
+            @click="downloadImg(scope.row)"
+            type="text"
+            size="small"
+            v-if="!scope.row.date"
+          >删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+
+    <el-table
+    :data="tableData5"
+    style="width: 100%">
+    <el-table-column type="expand">
+      <template slot-scope="props">
+          <el-table-column>{{ props.row.name }}</el-table-column>
+          <el-table-column>{{ props.row.name }}</el-table-column>
+        <!-- <el-form label-position="left" inline class="demo-table-expand">
+          <el-form-item label="商品名称">
+            <span>{{ props.row.name }}</span>
+          </el-form-item>
+          <el-form-item label="所属店铺">
+            <span>{{ props.row.shop }}</span>
+          </el-form-item>
+          <el-form-item label="商品 ID">
+            <span>{{ props.row.id }}</span>
+          </el-form-item>
+          <el-form-item label="店铺 ID">
+            <span>{{ props.row.shopId }}</span>
+          </el-form-item>
+          <el-form-item label="商品分类">
+            <span>{{ props.row.category }}</span>
+          </el-form-item>
+          <el-form-item label="店铺地址">
+            <span>{{ props.row.address }}</span>
+          </el-form-item>
+          <el-form-item label="商品描述">
+            <span>{{ props.row.desc }}</span>
+          </el-form-item>
+        </el-form> -->
+      </template>
+    </el-table-column>
+    <el-table-column
+      label="商品 ID"
+      prop="id">
+    </el-table-column>
+    <el-table-column
+      label="商品名称"
+      prop="name">
+    </el-table-column>
+    <el-table-column
+      label="描述"
+      prop="desc">
+    </el-table-column>
+  </el-table>
+
     </div>
 </template>
 
@@ -31,6 +108,39 @@
         name: "ExeChild01",
         data() {
             return {
+                tableData5: [{
+          id: '12987122',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }, {
+          id: '12987123',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }, {
+          id: '12987125',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }, {
+          id: '12987126',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }],
                 options: [{
                 value: '选项1',
                 label: '黄金糕'
@@ -47,7 +157,70 @@
                 value: '选项5',
                 label: '北京烤鸭'
                 }],
-                value: ''
+                value: '',
+                 tableList: [
+        {
+          label: "级别",
+          prop: "date"
+        },
+        {
+          label: "名称",
+          prop: "name"
+        },
+        {
+          label: "别名",
+          prop: "alias"
+        },
+        {
+          label: "操作员",
+          prop: "operator"
+        },
+        {
+          label: "状态",
+          prop: "state"
+        }
+      ],
+      tableData: [
+        {
+          id: 1,
+          date: "个人",
+          children: [
+            {
+              id: 11,
+              name: "第二根半价套餐",
+              alias: "是兄弟就来割",
+              operator: "铁手无情",
+              state: "无痛"
+            }
+          ]
+        },
+        {
+          id: 2,
+          date: "科室",
+          children: []
+        },
+
+        {
+          id: 3,
+          date: "全院",
+          children: [
+            {
+              id: 31,
+              name: "第二根半价套餐",
+              alias: "是兄弟就来割",
+              operator: "铁手无情",
+              state: "无痛"
+            },
+            {
+              id: 41,
+              name: "第二根半价套餐",
+              alias: "是兄弟就来割",
+              operator: "铁手无情",
+              state: "无痛"
+            }
+          ]
+        }
+      ]
             }
         },
         methods: {
