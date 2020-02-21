@@ -10,6 +10,11 @@
               <span slot="append">{{ data.slot.append }}</span>
             </template>
           </component>
+
+          <!-- <component ref="layer" v-bind:is="data.control" v-bind="data.attr" v-model="data.value"> -->
+          <component v-bind:is="'el-color-picker'"  v-model="color" show-alpha size="mini">
+          </component>
+          {{color}}
     </div>
 </template>
 
@@ -18,6 +23,7 @@
         name: "DynamicComponents",
         data() {
             return {
+                color:"",
              data: { attr: {}, slot: {}, control: 'Input', value: '' },
             iptTypeList: [
                 {
