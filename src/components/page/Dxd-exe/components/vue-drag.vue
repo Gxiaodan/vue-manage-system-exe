@@ -14,6 +14,7 @@
                 4
             </div>
         </VueDragResize>
+        <vue-drag-resize :isActive="true" :snapToGrid="true" :w="dragw" :h="dragh"></vue-drag-resize>
     </div>
 </template>
 
@@ -29,6 +30,7 @@
 
         data() {
             return {
+                x: 20,
                 width: 0,
                 height: 0,
                 top: 0,
