@@ -15,6 +15,17 @@
         </div>
         </div>
         <div id="basicMapbox" ref="basicMapbox" class="map"></div>
+
+        <div>
+          动效练习
+          常见定时器：
+          （1）setInterval
+          （2）setTimeout
+          （3）requestAnimationFrame======cancelAnimationFrame
+        </div>
+
+        <div class="animat" ref="animat"></div>
+        <div class="ball3" ref="ball3"></div>
     </div>
 </template>
 
@@ -36,13 +47,14 @@ import 'echarts-gl'
                     "http://localhost:8080/vias_app/static/vias/images/resultout.png",
                     "http://172.20.32.136:8088/down/img/person/1.jpg"
                 ],
-                faceSnapImageUrlList:[]
+                faceSnapImageUrlList:[],
+                start:null
             }
         },
         created(){
             let index = 0;
              setInterval(() => {
-                 console.log(++index)
+                //  console.log(++index)
                  this.faceSnapImageUrlList = [];
                  let temp = [];
                  for(let i=0; i<5; i++) {
@@ -50,11 +62,47 @@ import 'echarts-gl'
                  }
                 this.$nextTick(()=>{
                     this.faceSnapImageUrlList = temp;
-                    console.log(this.faceSnapImageUrlList)
+                    // console.log(this.faceSnapImageUrlList)
                 })
             }, 1500)
         },
+        mounted(){
+          // this.step()
+          this.animaBall()
+        },
         methods: {
+          step(timestamp) {
+            if (!this.start) this.start = timestamp;
+            var progress = timestamp - this.start;
+            console.log(this.$refs.animat)
+            this.$refs.animat.style.left = Math.min(progress / 10, 200) + 'px';
+            if (progress < 2000) {
+              window.requestAnimationFrame(this.step());
+            }
+
+          },
+          animaBall() {
+            // let ball3 = document.querySelector('.ball3')
+            let ball3 = this.$refs.ball3
+            let delta = 200 / 60
+            let offset = 0
+            let dir = 'right'
+            let render = function() {
+              if (offset >= 600) {
+                dir = 'left'
+              } else if (offset <= 0) {
+                dir = 'right'
+              }
+              ball3.style.left = offset + 'px'
+              if (dir === 'left') {
+                offset -= delta
+              } else {
+                offset += delta
+              }
+              requestAnimationFrame(render)
+            }
+            requestAnimationFrame(render)
+          },
             imgFaceError(item) {
                 let img = event.srcElement
                 img.src = this.defaultFaceImg
@@ -152,6 +200,9 @@ import 'echarts-gl'
         },
         props: {
             
+        },
+        destroyed(){
+          cancelAnimationFrame();
         }
 
     }
@@ -159,9 +210,15 @@ import 'echarts-gl'
 
 <style scoped>
 
-  .animation {
+  .animation{
     position: relative; 
     animation: alarmtext 15s linear infinite;
+  }
+  .animat,.ball3 {
+    width: 30px;
+    height: 30px;
+    background: red;
+    position: absolute;
   }
 
   @keyframes alarmtext {
