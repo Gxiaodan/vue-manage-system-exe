@@ -140,6 +140,10 @@
                                 title: '动画练习页面'
                             },
                             {
+                                index: 'animejs',
+                                title: 'anime练习页面'
+                            },
+                            {
                                 index: 'exe04',
                                 title: 'v-viewer练习页面'
                             },

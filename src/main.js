@@ -11,6 +11,7 @@ import './components/common/directives';
 import "babel-polyfill";
 import "ant-design-vue/dist/antd.css";
 import Viewer from 'v-viewer'
+// import anime from 'animejs'
 import ViewUI from "view-design";
 import "view-design/dist/styles/iview.css"
 // import "../my-theme/index.less"
@@ -25,6 +26,7 @@ import dataV from '@jiaminghi/data-view'
 
 // Vue.use(VueI18n);
 Vue.use(Viewer)
+// Vue.use(anime)
 Vue.use(dataV)
 Vue.use(contextmenu)
 Vue.use(sitplayer)

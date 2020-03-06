@@ -184,6 +184,11 @@ export default new Router({
                     meta: { title: '动画练习页面' }
                 },
                 {
+                    path: '/animejs',
+                    component: resolve => require(['../components/page/Dxd-exe/components/animejs.vue'], resolve),
+                    meta: { title: 'animejs练习页面' }
+                },
+                {
                     path: '/exe04',
                     component: resolve => require(['../components/page/Dxd-exe/components/child04-vViewer.vue'], resolve),
                     meta: { title: 'v-viewer练习页面' }

@@ -26,6 +26,13 @@
 
         <div class="animat" ref="animat"></div>
         <div class="ball3" ref="ball3"></div>
+        <div>
+          anime.js使用
+          <article>
+            <div class="blue"></div>
+            <div class="green"></div>
+          </article>
+        </div>
     </div>
 </template>
 
@@ -33,6 +40,7 @@
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import echarts from 'echarts/lib/echarts'
+import anime from 'animejs/lib/anime'
 import 'echarts-gl'
     export default {
         name: "ExeChild03",
@@ -69,6 +77,14 @@ import 'echarts-gl'
         mounted(){
           // this.step()
           this.animaBall()
+          var myAnimation = anime({
+            targets: ['.blue', '.green'],
+            translateX: '13rem',
+            rotate: 180,
+            borderRadius: 8,
+            duration: 2000,
+            loop: true
+          });
         },
         methods: {
           step(timestamp) {
@@ -209,7 +225,16 @@ import 'echarts-gl'
 </script>
 
 <style scoped>
-
+.blue{
+  width: 30px;
+  height: 30px;
+  background: blue;
+}
+.green{
+  width: 30px;
+  height: 30px;
+  background: green;
+}
   .animation{
     position: relative; 
     animation: alarmtext 15s linear infinite;
