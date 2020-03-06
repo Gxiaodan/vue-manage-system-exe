@@ -71,6 +71,22 @@ export default new Router({
             ]
         },
         {
+            path: '/antV',
+            component: resolve => require(['../components/common/Home.vue'], resolve),
+            redirect: 'noredirect',
+            name: 'antV',
+            meta: {
+                title: 'antV',
+                icon: 'international'
+            },
+            children: [{
+                    path: '/antV01',
+                    component: resolve => require(['../components/page/antV/child01.vue'], resolve),
+                    meta: { title: 'antV练习页面1' }
+                }
+            ]
+        },
+        {
             path: '/',
             component: resolve => require(['../components/common/Home.vue'], resolve),
             meta: { title: '自述文件' },

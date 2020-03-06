@@ -216,6 +216,17 @@
                                 title: 'DataVForm'
                             }                            
                         ]
+                    },
+                    {
+                        icon: 'el-icon-lx-warn',
+                        index: '11',
+                        title: 'antV',
+                        subs: [
+                            {
+                                index: 'antV01',
+                                title: 'antV01练习页面1'
+                            }                         
+                        ]
                     }
                     
                 ]
