@@ -99,7 +99,11 @@
       prop="desc">
     </el-table-column>
   </el-table>
-
+<div class="aa" ref="aa">
+  就看看is没借口is空间看好借好还或或或或或或或或或或或或啦啦啦啦啦啦啦啦绿绿绿绿一一一一一  
+</div>
+<el-button @click="refreshHtml(10,20)">refreshHtml</el-button>
+<el-button @click="refreshHtml(15,40)">refreshHtml</el-button>
     </div>
 </template>
 
@@ -224,6 +228,29 @@
             }
         },
         methods: {
+          refreshHtml(start,end){
+             let dom = this.$refs.aa;
+              console.log(dom, 'dom===========')
+              let html = dom.innerHTML;
+              console.log(html, 'html===========')
+              let text = dom.textContent.replace(/\s+/g,"");
+              console.log(text, 'text===========')
+            let txtArr = text.split('');
+              console.log(txtArr, 'txtArr===========')
+              txtArr.splice(end,0,"</span>")
+              txtArr.splice(start,0,"<span style='color:red;'>")
+              console.log(txtArr.join(""), 'newHtml===========')
+              dom.innerHTML = txtArr.join("");
+          },
+          // refresh($('#doc'),10,20);
+          refresh(dom,start,end){ 
+              let html = dom.html();
+              let text = dom.text().replace(/\s+/g,""); // 去除空格
+              let txtArr = text.split('');
+              txtArr.splice(end,0,"</span>")
+              txtArr.splice(start,0,"<span style='color:red;'>") // 高亮的样式，这来设置的颜色为red
+              dom.html(txtArr.join(""));
+          },
             selectChange(value){
                 // console.log(value);
                 // <1>不是v-model的情况
@@ -251,7 +278,19 @@
                 type: String
                 //  type: Boolean
             }
+        },
+        mounted(){
+        debugger
+         
         }
 
     }
 </script>
+
+
+<style scoped>
+.active{
+  font-size: bolder;
+  color: red;
+}
+</style>
