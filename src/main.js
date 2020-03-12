@@ -23,11 +23,13 @@ import 'v-contextmenu/dist/index.css'
 import i18n from './i18n/i18n'
 import VueDragResize from 'vue-drag-resize'
 import dataV from '@jiaminghi/data-view'
+import VueGridLayout from "vue-grid-layout";
 
 // Vue.use(VueI18n);
 Vue.use(Viewer)
 // Vue.use(anime)
 Vue.use(dataV)
+Vue.use(VueGridLayout)
 Vue.use(contextmenu)
 Vue.use(sitplayer)
     // Vue.use(ViewUI);
@@ -45,6 +47,8 @@ Vue.component(DatePicker.name, DatePicker)
 Vue.component(Select.name, Select)
 Vue.component(Icon.name, Icon)
 Vue.component('vue-drag-resize', VueDragResize)
+// Vue.component(GridLayout.name, GridLayout)
+// Vue.component(GridItem.name, GridItem)
 Vue.config.productionTip = false
 Vue.use(ElementUI, {
     size: 'small'

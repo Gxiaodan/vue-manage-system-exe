@@ -170,6 +170,10 @@
                              {
                                 index: 'scrollAnimate',
                                 title: 'scrollAnimate练习页面'
+                            },
+                             {
+                                index: 'vue_grid_layout',
+                                title: 'vue_grid_layout练习页面'
                             }
 
                         ]

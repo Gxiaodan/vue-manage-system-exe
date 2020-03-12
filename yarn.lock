@@ -785,6 +785,121 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@interactjs/actions@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/actions/download/@interactjs/actions-1.9.3.tgz#a5cae765ec2d524998225c0ddf397bc4ebf10201"
+  integrity sha1-pcrnZewtUkmYIlwN3zl7xOvxAgE=
+  optionalDependencies:
+    "@interactjs/interact" "1.9.3"
+
+"@interactjs/auto-scroll@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/auto-scroll/download/@interactjs/auto-scroll-1.9.3.tgz#0b86aca490ad1a726e876a26b0daa86f1028f59f"
+  integrity sha1-C4aspJCtGnJuh2omsNqobxAo9Z8=
+  optionalDependencies:
+    "@interactjs/interact" "1.9.3"
+
+"@interactjs/auto-start@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/auto-start/download/@interactjs/auto-start-1.9.3.tgz#a0c7d5565087f6b3144c757079d5b3d7840e11c5"
+  integrity sha1-oMfVVlCH9rMUTHVwedWz14QOEcU=
+  optionalDependencies:
+    "@interactjs/interact" "1.9.3"
+
+"@interactjs/core@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/core/download/@interactjs/core-1.9.3.tgz#65b4fe562634a9ae20e479680bd5f477ee01cc2a"
+  integrity sha1-ZbT+ViY0qa4g5HloC9X0d+4BzCo=
+
+"@interactjs/dev-tools@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/dev-tools/download/@interactjs/dev-tools-1.9.3.tgz#2ae19fca1538db3637bd29d77b465b76031b467f"
+  integrity sha1-KuGfyhU42zY3vSnXe0ZbdgMbRn8=
+  dependencies:
+    "@interactjs/utils" "1.9.3"
+  optionalDependencies:
+    "@interactjs/interact" "1.9.3"
+
+"@interactjs/inertia@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/inertia/download/@interactjs/inertia-1.9.3.tgz#5638165f5c2ec6e8270c2e9f2d6ca11acf9c68d6"
+  integrity sha1-VjgWX1wuxugnDC6fLWyhGs+caNY=
+  optionalDependencies:
+    "@interactjs/interact" "1.9.3"
+
+"@interactjs/interact@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/interact/download/@interactjs/interact-1.9.3.tgz#36d97ae266a76908d8627bcb687774e911b02f7f"
+  integrity sha1-Ntl64manaQjYYnvLaHd06RGwL38=
+
+"@interactjs/interactjs@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/interactjs/download/@interactjs/interactjs-1.9.3.tgz#db2ed956792421420d3dc7372482590fb804beac"
+  integrity sha1-2y7ZVnkkIUINPcc3JIJZD7gEvqw=
+  dependencies:
+    "@interactjs/actions" "1.9.3"
+    "@interactjs/auto-scroll" "1.9.3"
+    "@interactjs/auto-start" "1.9.3"
+    "@interactjs/dev-tools" "1.9.3"
+    "@interactjs/inertia" "1.9.3"
+    "@interactjs/interact" "1.9.3"
+    "@interactjs/modifiers" "1.9.3"
+    "@interactjs/offset" "1.9.3"
+    "@interactjs/pointer-events" "1.9.3"
+    "@interactjs/reflow" "1.9.3"
+    "@interactjs/types" "1.9.3"
+    "@interactjs/utils" "1.9.3"
+
+"@interactjs/modifiers@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/modifiers/download/@interactjs/modifiers-1.9.3.tgz#cfd340a16e43d768acdd5e30db1565d651e67c16"
+  integrity sha1-z9NAoW5D12is3V4w2xVl1lHmfBY=
+  optionalDependencies:
+    "@interactjs/interact" "1.9.3"
+
+"@interactjs/offset@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/offset/download/@interactjs/offset-1.9.3.tgz#6273abd29a93ec666bf7d2e9597d0686234d5272"
+  integrity sha1-YnOr0pqT7GZr99LpWX0GhiNNUnI=
+  optionalDependencies:
+    "@interactjs/interact" "1.9.3"
+
+"@interactjs/pointer-events@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/pointer-events/download/@interactjs/pointer-events-1.9.3.tgz#e1bb281a4f03a22b156fb23dba059f6d3a3fae02"
+  integrity sha1-4bsoGk8DoisVb7I9ugWfbTo/rgI=
+  optionalDependencies:
+    "@interactjs/interact" "1.9.3"
+
+"@interactjs/reflow@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/reflow/download/@interactjs/reflow-1.9.3.tgz#c9dc029d7ac47ff366580bfb2864f998088d0d57"
+  integrity sha1-ydwCnXrEf/NmWAv7KGT5mAiNDVc=
+  optionalDependencies:
+    "@interactjs/interact" "1.9.3"
+
+"@interactjs/types@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/types/download/@interactjs/types-1.9.3.tgz#63023543ebae33d65d60db0cf110b7fb23a2eced"
+  integrity sha1-YwI1Q+uuM9ZdYNsM8RC3+yOi7O0=
+  dependencies:
+    "@interactjs/actions" "1.9.3"
+    "@interactjs/auto-scroll" "1.9.3"
+    "@interactjs/auto-start" "1.9.3"
+    "@interactjs/core" "1.9.3"
+    "@interactjs/dev-tools" "1.9.3"
+    "@interactjs/inertia" "1.9.3"
+    "@interactjs/interact" "1.9.3"
+    "@interactjs/modifiers" "1.9.3"
+    "@interactjs/pointer-events" "1.9.3"
+    "@interactjs/reflow" "1.9.3"
+    "@interactjs/utils" "1.9.3"
+
+"@interactjs/utils@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/@interactjs/utils/download/@interactjs/utils-1.9.3.tgz#b630c51b740df8e82f9ddc721f532b28da18c4d4"
+  integrity sha1-tjDFG3QN+OgvndxyH1MrKNoYxNQ=
+
 "@intervolga/optimize-cssnano-plugin@^1.0.5":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@intervolga/optimize-cssnano-plugin/-/optimize-cssnano-plugin-1.0.6.tgz#be7c7846128b88f6a9b1d1261a0ad06eb5c0fdf8"
@@ -3157,6 +3272,13 @@ electron-to-chromium@^1.3.116:
   version "1.3.119"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.119.tgz#9a7770da667252aeb81f667853f67c2b26e00197"
 
+element-resize-detector@^1.1.15:
+  version "1.2.1"
+  resolved "https://registry.npm.taobao.org/element-resize-detector/download/element-resize-detector-1.2.1.tgz#b0305194447a4863155e58f13323a0aef30851d1"
+  integrity sha1-sDBRlER6SGMVXljxMyOgrvMIUdE=
+  dependencies:
+    batch-processor "1.0.0"
+
 element-resize-detector@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.2.0.tgz#63344fd6f4e5ecff6f018d027e17b281fd4fa338"
@@ -4186,6 +4308,14 @@ inherits@~2.0.0:
 ini@~1.3.0:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
+
+interactjs@^1.6.3:
+  version "1.9.3"
+  resolved "https://registry.npm.taobao.org/interactjs/download/interactjs-1.9.3.tgz#fb5d42e643e424341ac1819c9f9b3812392de44d"
+  integrity sha1-+11C5kPkJDQawYGcn5s4Ejkt5E0=
+  dependencies:
+    "@interactjs/interactjs" "1.9.3"
+    "@interactjs/types" "1.9.3"
 
 internal-ip@^4.2.0:
   version "4.2.0"
@@ -7782,6 +7912,14 @@ vue-cropperjs@^3.0.0:
 vue-drag-resize@^1.3.2:
   version "1.3.2"
   resolved "https://registry.npm.taobao.org/vue-drag-resize/download/vue-drag-resize-1.3.2.tgz#99132a99746c878e4596fad08d36c98f604930a3"
+
+vue-grid-layout@^2.3.7:
+  version "2.3.7"
+  resolved "https://registry.npm.taobao.org/vue-grid-layout/download/vue-grid-layout-2.3.7.tgz#d148f013ef2ca9dc1cb5d5298e7966aa50f54431"
+  integrity sha1-0UjwE+8sqdwctdUpjnlmqlD1RDE=
+  dependencies:
+    element-resize-detector "^1.1.15"
+    interactjs "^1.6.3"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"

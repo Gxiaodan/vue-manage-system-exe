@@ -179,6 +179,11 @@ export default new Router({
                     meta: { title: '动态组件' }
                 },
                 {
+                    path: '/vue_grid_layout',
+                    component: resolve => require(['../components/page/Dxd-exe/components/vue_grid_layout.vue'], resolve),
+                    meta: { title: 'vue_grid_layout' }
+                },
+                {
                     path: '/exe02',
                     component: resolve => require(['../components/page/Dxd-exe/components/child03——animation.vue'], resolve),
                     meta: { title: '动画练习页面' }
