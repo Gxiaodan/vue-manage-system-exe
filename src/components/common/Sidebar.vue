@@ -174,6 +174,10 @@
                              {
                                 index: 'vue_grid_layout',
                                 title: 'vue_grid_layout练习页面'
+                            },
+                             {
+                                index: 'VueDraggableResizable',
+                                title: 'VueDraggableResizable练习页面'
                             }
 
                         ]

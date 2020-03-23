@@ -24,6 +24,12 @@ import i18n from './i18n/i18n'
 import VueDragResize from 'vue-drag-resize'
 import dataV from '@jiaminghi/data-view'
 import VueGridLayout from "vue-grid-layout";
+import VueDraggableResizable from 'vue-draggable-resizable'
+
+// optionally import default styles
+import 'vue-draggable-resizable/dist/VueDraggableResizable.css'
+
+Vue.component('vue-draggable-resizable', VueDraggableResizable)
 
 // Vue.use(VueI18n);
 Vue.use(Viewer)

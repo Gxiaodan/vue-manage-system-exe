@@ -174,6 +174,11 @@ export default new Router({
                 },
 
                 {
+                    path: '/vueDraggableResizable',
+                    component: resolve => require(['../components/page/Dxd-exe/components/vueDraggableResizable.vue'], resolve),
+                    meta: { title: 'vueDraggableResizable' }
+                },
+                {
                     path: '/DynamicComponents',
                     component: resolve => require(['../components/page/Dxd-exe/components/dynamicComponents.vue'], resolve),
                     meta: { title: '动态组件' }
